@@ -24,20 +24,19 @@ for (int i = 0; i < NewArray.Length; i = i + 1)
 }
 
 
-Console.WriteLine();
-Console.WriteLine ("Введите число для поиска в массиве: ");
-int FindNumber = int.Parse(Console.ReadLine());
+//Console.WriteLine();
+//Console.WriteLine ("Введите число для поиска в массиве: ");
+//int FindNumber = int.Parse(Console.ReadLine());
 
 Console.WriteLine();
-for (int i = 0; i < NewArray.Length; i = i + 1)
-{   
-    if (NewArray[i] == FindNumber)
-    {
-        Console.WriteLine($"Да, число {FindNumber} присутствует в введённом вами массиве");
-        break;
-    }
-    else
-    {
-        Console.WriteLine($"Нет, число {FindNumber} не присутствует в введённом вами массиве");
-    }
-}
+
+ Console.Write("Введите число, которое хотите найти в массиве: ");
+            int number = int.Parse(Console.ReadLine());
+ 
+            int pos = -1;
+            for (int j = 0; j < NewArray.Length; j++)
+            {
+                if (number == NewArray[j]) { pos = j; break; }
+            }
+            if (pos >= 0) Console.WriteLine($"Да, элемент {number} находится в массиве.");
+            else Console.WriteLine($"Нет, элемента {number} нет в массиве.");
