@@ -3,10 +3,14 @@
 //Результат запишите в новом массиве
 //Пример: [1 2 3 4 5] => 5 8 3
 
-//Определяем, из скольки элементов будет состоять массив
+//Определяем, из скольки элементов будет состоять массив.
+//Сразу же здесь запишем в переменную, сколько будет пар в массиве.
 Console.WriteLine("Введите количество элементов массива: ");
 int elementsCount = int.Parse(Console.ReadLine());
 int [] NewArray = new int [elementsCount];
+int ArrayPairs = elementsCount / 2;
+int division = elementsCount % 2;
+Console.WriteLine($"Количество пар в введённом массиве равно {ArrayPairs}");
 
 //Заполняем наш массив вручную
 for(int i = 0; i < NewArray.Length; i = i + 1)
@@ -28,9 +32,32 @@ Console.Write("]");
 Console.WriteLine();
 Console.WriteLine("Найдём произведение пар массива: ");
 
-Console.Write("Вывод массива: ");
-for (int i = 0; i < NewArray.Length; i = i + 1)
+//Напишем метод, который принимает на вход массив, а возвращает 
+//первую часть пар массива
+
+int GetFirstPairs (int [] NewArray)
 {   
-    int mult = NewArray[0] * NewArray [NewArray.Length];
-    Console.Write($"{NewArray[i]} ");
+    int MultFirst = 0;
+    if (division == 0)
+    {
+        
+        for (int i = 0; i < ArrayPairs; i = i + 1)
+        {
+            MultFirst = NewArray[i] * NewArray[NewArray.Length - i - 1];
+            Console.WriteLine(MultFirst);
+        }   
+    }
+
+    else
+    {
+        
+        for (int i = 0; i < ArrayPairs; i = i + 1)
+        {
+            MultFirst = NewArray[i] * NewArray[NewArray.Length - i - 1];
+            Console.WriteLine(MultFirst);
+        }
+        Console.WriteLine(NewArray[ArrayPairs]);   
+    }
+    return MultFirst;
 }
+int first = GetFirstPairs(NewArray);
