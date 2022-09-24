@@ -3,7 +3,8 @@
 //Найдите разницу между максимальным и минимальным элементов массива.
 //Пример: [3 7 22 2 78] -> 76
 
-//Определяем, из скольки элементов будет состоять массив
+//Определяем, из скольки элементов будет состоять массив.
+//Принимаем на вход целые числа как показано в примере.
 Console.WriteLine("Введите количество элементов массива: ");
 int elementsCount = int.Parse(Console.ReadLine());
 int [] NewArray = new int [elementsCount];
@@ -20,11 +21,11 @@ Console.WriteLine();
 Console.Write("Инициирован массив: [");
 for (int i = 0; i < NewArray.Length; i = i + 1)
 {   
-      if (i < elementsCount - 1)
+    if (i < elementsCount - 1)
         {
             Console.Write($"{NewArray[i]}, ");
         }
-        else
+    else
         {
             Console.Write($"{NewArray[i]}");
         }   
@@ -33,9 +34,7 @@ Console.Write("]");
 
 //Напишем метод, которы находит максимум в массиве.
 //Метод принимает на вход массив, а возвращает число
-
 Console.WriteLine("");
-
 int GetMax (int [] NewArray)
 {
     int max = NewArray[0];
@@ -48,14 +47,11 @@ int GetMax (int [] NewArray)
     }    
     return max;
 }
-
 int MaximumNumber = GetMax(NewArray);
 
 //Напишем метод, который находит минимум в массиве.
 //Метод принимает на вход массив, а возвращает число
-
 Console.WriteLine("");
-
 int GetMin (int [] NewArray)
 {
     int min = NewArray[0];
@@ -70,4 +66,4 @@ int GetMin (int [] NewArray)
 }
 
 int MinimumNumber = GetMin(NewArray);
-Console.Write($"Разница между максимальным элементом {MaximumNumber} и минимальным элементом {MinimumNumber}: {MaximumNumber - MinimumNumber}");
+Console.Write($"Разница между максимальным элементом {MaximumNumber} и минимальным элементом {MinimumNumber} введённого массива: {MaximumNumber - MinimumNumber}");
